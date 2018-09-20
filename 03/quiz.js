@@ -11,17 +11,14 @@
     ];
     console.log('sdfsdf');
     var wrap = document.getElementById('wrap');
-    var txt = document.getElementById('txt');
 
     var str = '';
-    var txtstr = '';
     console.log('12321321');
     for(var i=0; i<3; i++){
         console.log("safsa");
         str += '<div style ="display:inline-block; width:110px; margin:15px;"><img src="'+
                 todayPhoto[i].img+'" id="img"> <div style = text-align:center;>'+
                 todayPhoto[i].title+'</div></div>';
-        txtstr += '';
     }  
     wrap.innerHTML = str;
  
@@ -33,7 +30,6 @@
     function show(){
         
         var str = '';
-        var txt = '';
         if(p_count==1){
             for(var i=0; i<3; i++)
             // str += '<img src="'+todayPhoto[i].img+'"> ';
