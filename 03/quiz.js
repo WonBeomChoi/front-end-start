@@ -9,15 +9,20 @@
         ,{"url":"http://media.daum.net/photo/3899","img":"http://icon.daumcdn.net/w/c/12/05/81728227037306839.jpeg","title":"생후 6개월에 프랑스로 입양됐던 아이가..","id":"20120516030614331"}
         ,{"url":"http://sports.media.daum.net/general/gallery/STARKIMYUNA/index.html","img":"http://icon.daumcdn.net/w/c/12/05/81727815537682839.jpeg","title":"&#39;교생&#39; 김연아, 스승의날에도 인기폭발","id":"20120516092003892"}
     ];
-    
+    console.log('sdfsdf');
     var wrap = document.getElementById('wrap');
+    var txt = document.getElementById('txt');
 
     var str = '';
+    var txtstr = '';
+    console.log('12321321');
     for(var i=0; i<3; i++){
-
-        str += '<img src="'+todayPhoto[i].img+'"> ';
+        console.log("safsa");
+        str += '<div style ="display:inline-block; width:110px; margin:15px;"><img src="'+
+                todayPhoto[i].img+'" id="img"> <div style = text-align:center;>'+
+                todayPhoto[i].title+'</div></div>';
+        txtstr += '';
     }  
-    
     wrap.innerHTML = str;
  
     var p_num = document.querySelector("#p_num");
@@ -28,17 +33,27 @@
     function show(){
         
         var str = '';
+        var txt = '';
         if(p_count==1){
             for(var i=0; i<3; i++)
-            str += '<img src="'+todayPhoto[i].img+'"> ';
+            // str += '<img src="'+todayPhoto[i].img+'"> ';
+            str += '<div style ="display:inline-block; width:110px; margin:15px;"><img src="'+
+            todayPhoto[i].img+'" id="img"> <div style = text-align:center;>'+
+            todayPhoto[i].title+'</div></div>';
         }
         else if(p_count==2){
             for(var i=3; i<6; i++)
-            str += '<img src="'+todayPhoto[i].img+'"> ';
+            // str += '<img src="'+todayPhoto[i].img+'"> ';
+            str += '<div style ="display:inline-block; width:110px; margin:15px;"><img src="'+
+            todayPhoto[i].img+'" id="img"> <div style = text-align:center;>'+
+            todayPhoto[i].title+'</div></div>';
         }
         else if(p_count==3){
             for(var i=6; i<8; i++)
-            str += '<img src="'+todayPhoto[i].img+'"> ';
+            // str += '<img src="'+todayPhoto[i].img+'"> ';
+            str += '<div style ="display:inline-block; width:110px; margin:15px;"><img src="'+
+            todayPhoto[i].img+'" id="img"> <div style = text-align:center;>'+
+            todayPhoto[i].title+'</div></div>';
         }
         
     wrap.innerHTML = str;
