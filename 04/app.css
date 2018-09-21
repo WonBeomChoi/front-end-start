@@ -2,6 +2,7 @@
     width: 200px;
 }
 .wrap> div{ float: left;}
+.b:active{background-color: red;}
 .wrap .b{
     width: 50px;
     height: 50px;
