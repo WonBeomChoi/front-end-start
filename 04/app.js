@@ -7,7 +7,7 @@
             wrap.appendChild(div);
         }
     }
-    var blocks = document.querySelectorAll('.wrap > div');
+    var blocks = document.querySelectorAll('.wrap > div'); 
     
     
     function select(event){
