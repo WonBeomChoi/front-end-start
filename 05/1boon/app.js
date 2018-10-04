@@ -1,5 +1,6 @@
 
 var url = 'https://1boon.kakao.com/ch/enter.json?page=1&pagesize=10'
+var page_n = 1;
 
 
 getUrlData(url,print);
@@ -14,7 +15,7 @@ function print(json){
         str += '<a href="https://1boon.kakao.com/'+path+'">' + title + '</a><br>';
 
     }
-    document.getElementById('wrap').innerHTML = str;
+    document.getElementById('wrap').innerHTML += str;
 }
 
 function getUrlData(url, callback){
@@ -25,6 +26,13 @@ function getUrlData(url, callback){
         });
     })
     .catch(function(err) {
-        console.log("sadf");
+        console.log("err");
     });
 }
+
+document.getElementById('more').addEventListener('click',function(){
+    url = 'https://1boon.kakao.com/ch/enter.json?page='+page_n+'&pagesize=10';
+    getUrlData(url, print);
+    page_n++;
+})
+
