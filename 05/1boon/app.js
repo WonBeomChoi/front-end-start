@@ -1,6 +1,6 @@
 
 var url = 'https://1boon.kakao.com/ch/enter.json?page=1&pagesize=10'
-var page_n = 1;
+var page_n = 2;
 
 
 getUrlData(url,print);
