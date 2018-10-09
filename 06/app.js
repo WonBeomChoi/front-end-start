@@ -1,14 +1,18 @@
-var query = '제주대학교';
+var query = '';
 var appkey = 'KakaoAK 17d2dc4e661078bf47fcd2a706393314';
 var more = document.getElementById('more');
-var page_n = 1;
 var searchvar = document.getElementById('searchbar');
+var page_n = 1;
+var str = '';
+
 
 searchvar.onkeypress = function enterkeysearch(event){
     if(event.keyCode == 13){
+        str = '';
         query = searchvar.value;
         getUrlData(query, option, print);
         console.log(searchvar.value);
+        more.style.display = 'block'
     }
 }
 
@@ -27,14 +31,20 @@ more.addEventListener('click', function(){
 function print(json){
     console.log(json);
     console.log(json.documents[1].title);
-    var str = '';
     for( var i=0; i< json.documents.length; i++){
         var title = json.documents[i].title;
         var content = json.documents[i].contents;
         var url = json.documents[i].url;
-        str += `<a href=${url}>${title}</a><br>${content}<br>`
+        str += 
+        `
+        <div id="container">   
+            <a href=${url} id = "title">${title}</a>
+            <a href=${url} id = "url">${url}</a>
+            <div id = "content">${content}</div>
+        </div>
+        `
     }
-    document.getElementById('wrap').innerHTML += str;
+    document.getElementById('list').innerHTML = str;
 }
 
 
