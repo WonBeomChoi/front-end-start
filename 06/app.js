@@ -2,9 +2,16 @@ var query = '';
 var appkey = 'KakaoAK 17d2dc4e661078bf47fcd2a706393314';
 var more = document.getElementById('more');
 var searchvar = document.getElementById('searchbar');
+var searchbtn = document.getElementById('searchbtn');
 var page_n = 1;
 var str = '';
 
+searchbtn.addEventListener('click',function(){
+    str = '';
+        query = searchvar.value;
+        getUrlData(query, option, print);
+        more.style.display = 'block'
+});
 
 searchvar.onkeypress = function enterkeysearch(event){
     if(event.keyCode == 13){
@@ -20,8 +27,6 @@ var option = {
     method : 'GET',
     headers : {Authorization : appkey}
 }
-
-
 
 more.addEventListener('click', function(){
     getUrlData(query, option, print);
