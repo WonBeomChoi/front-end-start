@@ -3,21 +3,22 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  state = {
+    sec : 0,
+  }
+  componentDidMount(){
+    window.setInterval(()=>{
+      this.setState(state=>({
+        sec: state.sec + 1
+      }));
+    },1000)
+  }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="App" style={{"font-size": "14rem"}}>
+        {this.props.name}
+        asdfsdaf<br/>
+        {this.state.sec}
       </div>
     );
   }
